@@ -22,21 +22,21 @@ PUSH_MSG = ''
 
 async def get_mail():
     #通过postman去调用接口获取邮箱，直接修改这个邮箱地址
-    mail='2u23sg1i929b5olt@wywnxa.com'
-    return mail
+    # mail='2u23sg1i929b5olt@wywnxa.com'
+    # return mail
     
-    # json_data = {
-    #     "min_name_length": 10,
-    #     "max_name_length": 10
-    # }
-    # url = 'https://api.internal.temp-mail.io/api/v3/email/new'
-    # async with aiohttp.ClientSession() as session:
-    #     async with session.post(url, json=json_data, ssl=False) as response:
-    #         print (response)
-    #         response_data = await response.json()
-    #         mail = response_data['email']
-    #         mail='3acrswq7lqd@rfcdrive.com'
-    #         return mail
+    json_data = {
+        "min_name_length": 10,
+        "max_name_length": 10
+    }
+    url = 'https://api.internal.temp-mail.io/api/v3/email/new'
+    async with aiohttp.ClientSession() as session:
+        async with session.post(url, json=json_data, ssl=False) as response:
+            print (response)
+            response_data = await response.json()
+            mail = response_data['email']
+            # mail='3acrswq7lqd@rfcdrive.com'
+            return mail
 
 # 检查变量
 def check_env():
